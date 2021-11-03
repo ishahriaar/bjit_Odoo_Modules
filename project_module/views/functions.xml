@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+        <record id='function_view_form' model='ir.ui.view' >
+            <field name='name'>fun.view.form</field>
+            <field name='model'>function.name</field>
+            <field name='arch' type='xml'>
+                <tree editable="bottom">
+                            <field name="function_name"/>
+                            <field name="fun_effort"/>
+                            <field name="fun_ac"/>
+                </tree>
+            </field>
+        </record>
+
+  </data>
+</odoo>

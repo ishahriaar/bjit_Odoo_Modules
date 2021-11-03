@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+<!-- for project form view -->
+
+
+      <record id='tech_name_tree_form' model='ir.ui.view' >
+            <field name='name'>tech.name.tree.view</field>
+            <field name='model'>technology.name</field>
+            <field name='arch' type='xml'>
+                <tree editable="bottom">
+
+
+
+
+                    <field name="name"/>
+
+                    <field name="source_code_line"/>
+                    <field name="source_code_per"/>
+
+                    <field name="comment_line"/>
+                    <field name="comment_lin_per"/>
+
+                    <field name="blank_line"/>
+                    <field name="blank_line_per"/>
+
+                    <field name="total_line"/>
+
+
+
+
+                </tree>
+            </field>
+        </record>
+  </data>
+</odoo>

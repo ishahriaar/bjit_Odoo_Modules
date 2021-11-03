@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+<!-- for project form view -->
+        <record id='project_view_form' model='ir.ui.view' >
+            <field name='name'>project.module.form.custom</field>
+            <field name='model'>project.module</field>
+            <field name='arch' type='xml'>
+                <form>
+
+
+
+                    <sheet>
+
+                        <group>
+                            <field name="module_name"/>
+                            <field name="estimate_effort"/>
+                            <field name="actual_effort"/>
+
+
+                        </group>
+                    </sheet>
+                    <div style="padding:20px;">
+                    <notebook>
+                        <page string="Technologies" name="function_ops">
+
+                                <div style="padding:10px;">
+                                    <field name="tech_in"/>
+                                </div>
+
+                        </page>
+
+                        <page string="Functions" name="function_ops">
+
+                                <div style="padding:10px;">
+                                    <field name="function_in"/>
+                                </div>
+
+                        </page>
+
+
+                    </notebook>
+
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+
+      <record id='project_view_tree' model='ir.ui.view' >
+            <field name='name'>project.module.tree.custom</field>
+            <field name='model'>project.module</field>
+            <field name='arch' type='xml'>
+                <tree>
+
+
+
+
+
+
+                    <field name="module_name"/>
+                    <field name="estimate_effort"/>
+                    <field name="actual_effort"/>
+
+
+
+
+
+
+                </tree>
+            </field>
+        </record>
+  </data>
+</odoo>

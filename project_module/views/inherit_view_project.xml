@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="view_users_form_custom" model="ir.ui.view">
+            <field name="name">res.users.form.real</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook/page[3]" position="after">
+                            <page string="Project Modules">
+
+                                    <field name="custom_module" nolable="1"/>
+
+
+
+
+                            </page>
+                </xpath>
+
+            </field>
+
+        </record>
+
+    </data>
+</odoo>
