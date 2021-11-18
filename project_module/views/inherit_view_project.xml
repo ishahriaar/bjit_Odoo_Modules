@@ -5,8 +5,8 @@
 
         <record id="view_users_form_custom" model="ir.ui.view">
             <field name="name">res.users.form.real</field>
-            <field name="model">project.task</field>
-            <field name="inherit_id" ref="project.view_task_form2" />
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project" />
             <field name="arch" type="xml">
 
                 <xpath expr="//notebook/page[1]" position="before">

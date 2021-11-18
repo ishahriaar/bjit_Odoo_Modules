@@ -1,0 +1,40 @@
+<odoo>
+
+
+    <record id="project_inherit_lesson" model="ir.ui.view">
+        <field name="name">	project.view.task</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project" />
+        <field name="arch" type="xml">  
+            
+            <xpath expr="//notebook/page[1]" position="before">
+                  <page string="Project Lesson Learned" >
+
+
+                      <field name="lesson">
+                        <tree editable ="bottom">
+                            <field name="mile"/>
+                            <field name="des1"/>
+                            <field name="fos"/>
+                            <field name="des2"/>
+                            <field name="cause"/>
+                            <field name="des3"/>
+                            <field name="mit"/>
+
+                           
+                        </tree>
+                      </field>
+                  </page> 
+            </xpath>
+            
+
+        </field>
+
+    </record>
+
+
+
+
+
+
+</odoo>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="view_my_form_employee" model="ir.ui.view">
+      <field name="name">employee.form.edit</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form" />
+      <field name="arch" type="xml">
+
+        <xpath expr="//group[@name='hide_this_group']" position="replace">
+
+
+        </xpath>
+
+        <!-- act_employee_from_department -->
+
+
+
+        <xpath expr="//notebook/page[1]" position="replace">
+
+
+          <page name="public" string="Work Information">
+            <div id="o_work_employee_container">              <!-- These two div are used to position org_chart -->
+              <div id="o_work_employee_main">
+
+                <group>
+
+
+                  <group>
+                    <h2 style="color:blue;padding:5px;">Contact Information</h2>
+
+                    <field name="address_id" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
+
+                    <field name="work_email" widget="email"/>
+                    <field name="mobile_phone" widget="phone"/>
+                    <field name="work_phone" widget="phone"/>
+                    <field name="platform" widget="many2many_tags"/>
+                    <field name="skype_id"/>
+
+                    
+
+                    <!-- <field name="employee_name_filter"/> -->
+
+                  </group>
+
+                  <group>
+                    <h2 style="color:blue;padding:5px;">Position</h2>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="department_id"/>
+                    <field name="job_title"/>
+<!--                    <field name="employee_type"/>-->
+                    <field name="employee_role"/>
+                    <field name="parent_id"/>
+                    <field name="coach_id"/>
+                    <field name="resource_calendar_id" required="1"/>
+
+                  </group>
+
+                </group>
+
+
+                <!-- is overridden in other hr related modules -->
+                <!-- <group name="managers" string="Approvers" class="hide-group-if-empty">
+                  
+                </group> -->
+
+                <group name="departure" string="Departure" attrs="{'invisible': [('active', '=', True)]}">
+                  <!-- <field name="departure_reason"/>
+                  <field name="departure_description"/>
+                  <field name="departure_date"/> -->
+                </group>
+
+                <!-- <group string="Schedule">
+                  <field name="resource_calendar_id" required="1"/>
+                  <field name="tz"/>
+                </group> -->
+
+
+              </div>
+            </div>
+          </page>
+
+
+
+
+        </xpath>
+
+      </field>
+
+    </record>
+
+<!--    <record id="view_employee_default_filter_inherit" model="ir.ui.view">-->
+<!--      <field name="name">employee.default.filter</field>-->
+<!--      <field name="model">hr.employee</field>-->
+<!--      <field name="inherit_id" ref="hr.view_employee_filter" />-->
+<!--      <field name="arch" type="xml">-->
+
+<!--        <xpath expr="//filter[@name='activities_upcoming_all']" position="after">-->
+
+
+<!--          <filter string="Me" name="me" domain="[('name', '=', 'Shahriar')]"/>-->
+
+
+
+<!--        </xpath>-->
+
+<!--      </field>-->
+
+<!--    </record>-->
+
+
+
+
+
+    <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">
+      <field name="name"> BJIT Employees </field>
+      <field name="context">{'chat_icon': False, 'search_default_me': 1}</field>
+    </record>
+
+
+
+
+
+
+
+
+  </data>
+</odoo>

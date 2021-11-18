@@ -18,7 +18,7 @@ class ProjectData(models.Model):
     function_in = fields.One2many('function.name', 'module_in', string='')
     tech_in = fields.One2many('technology.name', 'module_info', string='')
 
-    owner_module = fields.Many2one('project.task', string='')
+    owner_module = fields.Many2one('project.project', string='')
 
 
 class ModuleName(models.Model):

@@ -3,8 +3,8 @@
 
     <record id="bjit_project_view_form" model="ir.ui.view">
         <field name="name">project.view.form</field>
-        <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook/page[1]" position="before">
                 <page string="Project Metrices">

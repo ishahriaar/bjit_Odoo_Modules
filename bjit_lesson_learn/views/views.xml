@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+   
+
+    <record model="ir.ui.view" id="milestone_form">
+      <field name="name">project.lesson.form</field>
+      <field name="model">bjit.mstone</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+          <field name="name"/>
+           
+          </sheet>
+          
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

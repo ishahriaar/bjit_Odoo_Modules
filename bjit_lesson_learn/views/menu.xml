@@ -1,0 +1,39 @@
+<odoo>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="project_action_window">
+        <field name="name">project window</field>
+        <field name="res_model">lession.project</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="milestone_action_window">
+      <field name="name">project window</field>
+      <field name="res_model">bjit.mstone</field>
+      <field name="view_mode">form</field>
+    </record>
+  
+
+   
+
+
+    <!-- menu item -->
+<!--    <menuitem id="project_root"-->
+<!--            name="Project"-->
+<!--            -->
+<!--            sequence="10"/>-->
+<!--    -->
+<!--        <menuitem name="Dashboard"-->
+<!--        action="project_action_window"-->
+<!--        id="menu_1"-->
+<!--        parent="project_root"/>-->
+
+
+
+
+
+
+
+
+
+</odoo>
+    

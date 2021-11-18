@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bjit_project_bjit_project,bjit_project.bjit_project,model_bjit_project_bjit_project,base.group_user,1,1,1,1

@@ -1,0 +1,107 @@
+<odoo>
+  <data>
+
+    <record id="project_member_tree" model="ir.ui.view">
+      <field name="name">project.member.tree</field>
+      <field name="model">project.member</field>
+      <field name="arch" type="xml">
+        <tree class="my_class">
+          <field name="project_member_id"/>
+          <field name="team_id"/>
+          <field name="project_member_role"/>
+
+          <field name="responsibility"/>
+          
+          <field name="project_phase"/>
+          <field name="project_process"/>
+
+          <field name="assigned_from"/>
+          
+          <field name="assigned_to"/>
+          <field name="notes"/>
+
+          
+
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="project_member_form" model="ir.ui.view">
+      <field name="name">project.member.form</field>
+      <field name="model">project.member</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+
+                    <group>
+                      <field name='project_member_id'/>
+
+                      <field name="team_id"/>
+
+
+                      <field name="assigned_from"/>
+                      <field name="assigned_to"/>
+
+
+
+                      <field name="notes"/>
+
+                    </group>
+
+                  </div>
+
+                  <div class="col-md-6">
+
+                    <group>
+
+                      <field name="project_member_role"/>
+                      <field name="manager_status"/>
+
+                      <field name='responsibility'/>
+
+                      <field name='project_phase'/>
+                      <field name="project_process"/>
+                      
+
+                    </group>
+
+                  </div>
+
+                  <div class="col-md-12">
+
+                    <group string="Monthly Invoice">
+                    
+                      <field name='monthly_invoice_id' nolabel="1"/>
+                    </group>
+
+                  </div>
+
+                </div>
+              </div>
+
+
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record id="project_member" model="ir.actions.act_window">
+      <field name="name">Project Member</field>
+      <field name="res_model">project.member</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <menuitem name="Report" id="daily_report.menu_activity_list" parent="daily_report.menu_root" action="daily_report_activity"/> -->
+
+  </data>
+</odoo>

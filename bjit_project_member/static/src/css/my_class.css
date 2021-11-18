@@ -1,0 +1,17 @@
+
+
+.my_class table thead > tr > th:nth-child(1){
+    width: 130px;
+    text-align: center;
+
+}
+
+.my_class table thead > tr > th:nth-child(9){
+    width: 150px;
+    text-align: center;
+
+}
+
+
+
+

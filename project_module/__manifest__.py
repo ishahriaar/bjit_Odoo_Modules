@@ -20,7 +20,7 @@
     'data': [
         # 'security/ir.model.access.csv',
 
-        # 'views/menu.xml',
+
         'views/functions.xml',
         'views/fun_add.xml',
         'views/inherit_view_project.xml',
@@ -33,6 +33,12 @@
         'views/project_techno_view.xml'
 
     ],
+
+    "assets": {
+        "web.assets_backend": [
+            "project_module/static/src/css/my_custom.css"
+        ]
+           }
 
 
 }

@@ -11,7 +11,7 @@ class AllTech(models.Model):
 
     tech_desc = fields.Text(string='Description')
 
-    owner_category = fields.Many2one('project.task', string='')
+    owner_category = fields.Many2one('project.project', string='')
 
 
 class AddCat(models.Model):

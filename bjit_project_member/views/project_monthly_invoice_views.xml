@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+
+    <record id="project_invoice_tree" model="ir.ui.view">
+      <field name="name">project.monthly.invoice.tree</field>
+      <field name="model">project.monthly.invoice</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+
+          
+
+            <field name="month"/>
+            <field name="invoice_status"/>
+            <field name="invoiced_percent" colspan="4"/>
+
+            <field name="assign_percent"/>
+            <field name="notes"/>
+          
+
+
+        </tree>
+      </field>
+    </record>
+
+
+
+
+
+    <!-- actions opening views on models -->
+
+    <record id="project_invoice" model="ir.actions.act_window">
+      <field name="name">Project Monthly Invoice</field>
+      <field name="res_model">project.monthly.invoice</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+    <!-- <menuitem name="Report" id="daily_report.menu_activity_list" parent="daily_report.menu_root" action="daily_report_activity"/> -->
+
+  </data>
+</odoo>
