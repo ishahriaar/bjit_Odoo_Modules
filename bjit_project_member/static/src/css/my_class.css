@@ -12,6 +12,20 @@
 
 }
 
+.my_class table thead > tr > th:nth-child(7){
+    width: 90px;
+    text-align: center;
+
+}
+
+.my_class table thead > tr > th:nth-child(8){
+    width: 90px;
+    text-align: center;
+
+}
+
+
+
 
 
 

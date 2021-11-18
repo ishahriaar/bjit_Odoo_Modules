@@ -1,0 +1,76 @@
+<odoo>
+  <data>
+
+    <record id="project_eaf_tree" model="ir.ui.view">
+      <field name="name">project.member.tree</field>
+      <field name="model">project.eaf</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="attr_name"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+    <record id="project_attribute_tree" model="ir.ui.view">
+      <field name="name">project.attr.tree</field>
+      <field name="model">attr.cat</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+
+          <field name="name"/>
+          <field name="very_low"/>
+          <field name="low"/>
+          <field name="normal"/>
+          <field name="high"/>
+          <field name="very_high"/>
+          <field name="extra_high"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="project_member_form" model="ir.ui.view">
+      <field name="name">project.member.form</field>
+      <field name="model">project.eaf</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+
+
+              <group>
+                <field name="attr_name"/>
+
+
+              </group>
+              <field name="details_table" nolabel="1"/>
+
+
+
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="eaf_action_window">
+      <field name="name">Project EAF</field>
+      <field name="res_model">project.eaf</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- menu categories -->
+
+    <menuitem name="Project EAF"
+     action="eaf_action_window"
+     id="apple_menu_70"
+     />
+
+  </data>
+</odoo>
