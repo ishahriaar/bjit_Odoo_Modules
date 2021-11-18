@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+
+        <record id='project_category_tree' model='ir.ui.view' >
+            <field name='name'>project.category.custom</field>
+            <field name='model'>project.tech</field>
+            <field name='arch' type='xml'>
+                <tree editable="bottom">
+
+                    <field name="tech_cat"/>
+                    <field name="tech_value"/>
+                    <field name="tech_desc"/>
+
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

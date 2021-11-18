@@ -9,10 +9,21 @@
             <field name="inherit_id" ref="project.view_task_form2" />
             <field name="arch" type="xml">
 
-                <xpath expr="//notebook/page[3]" position="after">
+                <xpath expr="//notebook/page[1]" position="before">
                             <page string="Project Modules">
 
                                     <field name="custom_module" nolable="1"/>
+
+
+
+
+                            </page>
+                </xpath>
+
+                <xpath expr="//notebook/page[1]" position="before">
+                            <page string="Project Technologies">
+
+                                    <field name="custom_cat" nolable="1"/>
 
 
 

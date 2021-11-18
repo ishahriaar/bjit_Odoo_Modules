@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="bjit_project_view_form" model="ir.ui.view">
+        <field name="name">project.view.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="before">
+                <page string="Project Metrices">
+                    
+                    
+                    <field name="pro_name">
+                        <tree editable="bottom">
+                            <field name="milestone_line_ids"/>
+                            <field name="actual_date"/>
+                            <field name="actual_end"/>
+                            <field name="ac_effort"/>
+                            <field name="plan_effort"/>
+                            <field name="schedule"/>
+                            <field name="ef_dev"/>
+                            <field name="pro"/>
+                            <field name="size"/>
+                            
+                            
+
+                        </tree>
+                        
+                    </field>
+
+                    
+                </page>
+            </xpath>
+
+           
+        </field>
+    </record>
+    
+
+    
+             
+</odoo>
+
+              
+
+
+

@@ -9,8 +9,8 @@ class ProjectData(models.Model):
     _rec_name = 'module_name'
 
     module_name = fields.Many2one('module.name', string='Module')
-    estimate_effort = fields.Float(string='Estimated Effort')
-    actual_effort = fields.Float(string='Actual Effort')
+    estimate_effort = fields.Float(string='Estimated Effort', default=0.00)
+    actual_effort = fields.Float(string='Actual Effort', default=0.00)
 
 
     # Inherited Class For Pages

@@ -7,6 +7,8 @@ class MyProject(models.Model):
 
     custom_module = fields.One2many('project.module', 'owner_module')
 
+    custom_cat = fields.One2many('project.tech', 'owner_category')
+
 
 
 

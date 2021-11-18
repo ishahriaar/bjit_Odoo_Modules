@@ -1,0 +1,43 @@
+<!-- <odoo>
+  <data>
+
+    <!-- actions opening views on models -->
+
+
+    <record model="ir.actions.act_window" id="project.action_window_01">
+      <field name="name">Dashboard</field>
+      <field name="res_model">inherited.module</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+ 
+    
+  
+
+
+   
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Bjit Project" id="project.menu_root"/>
+
+    <!-- menu categories -->
+    
+    <menuitem name="Dashboard" id="bjit_project.project" parent="project.menu_root" />
+    
+
+    <!-- actions -->
+
+    
+    <menuitem name="Dashboard" id="bjit_project.project_list_01" parent="bjit_project.project"
+              action="project.action_window_01"/> 
+    
+
+
+
+  
+
+  </data>
+</odoo> -->

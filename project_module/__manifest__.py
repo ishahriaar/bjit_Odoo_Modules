@@ -29,7 +29,8 @@
         'views/module_name.xml',
         'views/technology_view.xml',
         'views/tech_add.xml',
-        'views/inherit_view_project.xml'
+        'views/inherit_view_project.xml',
+        'views/project_techno_view.xml'
 
     ],
 
