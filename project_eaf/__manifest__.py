@@ -19,7 +19,8 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/project_eaf.xml'
+        'views/project_eaf.xml',
+        'views/inherit_view_project.xml'
     ]
 
 }

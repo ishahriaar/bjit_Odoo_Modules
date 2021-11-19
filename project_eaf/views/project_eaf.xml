@@ -57,20 +57,20 @@
     </record>
 
 
-    <record model="ir.actions.act_window" id="eaf_action_window">
-      <field name="name">Project EAF</field>
-      <field name="res_model">project.eaf</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+<!--    <record model="ir.actions.act_window" id="eaf_action_window">-->
+<!--      <field name="name">Project EAF</field>-->
+<!--      <field name="res_model">project.eaf</field>-->
+<!--      <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
 
 
 
-    <!-- menu categories -->
+<!--    &lt;!&ndash; menu categories &ndash;&gt;-->
 
-    <menuitem name="Project EAF"
-     action="eaf_action_window"
-     id="apple_menu_70"
-     />
+<!--    <menuitem name="Project EAF"-->
+<!--     action="eaf_action_window"-->
+<!--     id="apple_menu_70"-->
+<!--     />-->
 
   </data>
 </odoo>

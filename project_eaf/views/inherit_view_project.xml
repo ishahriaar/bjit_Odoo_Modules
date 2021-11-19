@@ -9,6 +9,11 @@
             <field name="inherit_id" ref="project.edit_project" />
             <field name="arch" type="xml">
 
+                <xpath expr="//notebook/page[@name='description']" position="replace">
+
+
+                </xpath>
+
                 <xpath expr="//notebook/page[1]" position="before">
                             <page string="Project EAF">
 
