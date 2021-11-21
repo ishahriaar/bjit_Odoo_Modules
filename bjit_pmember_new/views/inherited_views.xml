@@ -1,0 +1,38 @@
+<odoo>
+  <record id="project_edit_project_view" model="ir.ui.view">
+    <field name="name">project.project.form</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.edit_project" />
+    <field name="arch" type="xml">
+      <xpath expr="//notebook/page[1]" position="after">
+
+
+        <page string="Project Timeline">
+          <group>
+
+            <field name="last_modified_on" readonly="1"/>
+            <field name="created_on"/>
+            <field name="start_date"/>
+            <field name="project_closure_date"/>
+
+          </group>
+        </page>
+
+        <page string="Project Members">
+          <group>
+
+            <field name="project_member_ids" nolabel="1"/>
+
+
+          </group>
+        </page>
+
+
+
+
+
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

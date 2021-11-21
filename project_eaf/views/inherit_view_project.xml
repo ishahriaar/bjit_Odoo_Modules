@@ -14,7 +14,7 @@
 
                 </xpath>
 
-                <xpath expr="//notebook/page[1]" position="before">
+                <xpath expr="//notebook/page[3]" position="after">
                             <page string="Project EAF">
 
                                     <field name="inverse_eaf" nolable="1"/>

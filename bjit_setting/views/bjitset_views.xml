@@ -1,0 +1,56 @@
+<odoo>
+
+
+    <record id="project_inherit_id" model="ir.ui.view">
+        <field name="name">	project.view_task</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook/page[@name='settings']" position="after">
+                  <page string="Project Settings" name="CustomSettings">
+
+
+
+
+                        <form>
+                            <group>
+
+                                <field name="pro_id"/>
+                                <field name="pro_status"/>
+                                <field name="dept"/>
+                                <field name="pro_manager"/>
+                                <field name="sqa_manager"/>
+                                <field name="customer"/>
+                                <field name="pro_owner"/>
+                                <field name="link"/>
+                                <field name="gerrit_link"/>
+                                <field name="des"/>
+                                <field name="pro_type"/>
+                                <field name="eas_effort"/>
+                                <field name="actual_effort"/>
+                                <field name="invoice_effort"/>
+                                <field name="cocomo_effort"/>
+
+
+
+
+                            </group>
+                        </form>
+
+
+                  </page>
+            </xpath>
+
+
+
+        </field>
+
+    </record>
+
+
+
+
+
+
+</odoo>

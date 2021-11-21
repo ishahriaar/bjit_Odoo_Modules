@@ -9,7 +9,7 @@
             <field name="inherit_id" ref="project.edit_project" />
             <field name="arch" type="xml">
 
-                <xpath expr="//notebook/page[1]" position="before">
+                <xpath expr="//notebook/page[1]" position="after">
                             <page string="Project Modules">
 
                                     <field name="custom_module" nolable="1"/>
@@ -20,7 +20,7 @@
                             </page>
                 </xpath>
 
-                <xpath expr="//notebook/page[1]" position="before">
+                <xpath expr="//notebook/page[1]" position="after">
                             <page string="Project Technologies">
 
                                     <field name="custom_cat" nolable="1"/>

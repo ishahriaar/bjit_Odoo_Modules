@@ -7,8 +7,8 @@
         <field name="inherit_id" ref="project.edit_project" />
         <field name="arch" type="xml">  
             
-            <xpath expr="//notebook/page[1]" position="before">
-                  <page string="Project Lesson Learned" >
+            <xpath expr="//notebook/page[5]" position="after">
+                  <page string="Project Lesson Learned" name="my_lesson">
 
 
                       <field name="lesson">

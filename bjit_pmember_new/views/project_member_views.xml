@@ -5,7 +5,7 @@
       <field name="name">project.member.tree</field>
       <field name="model">project.member</field>
       <field name="arch" type="xml">
-        <tree class="my_class">
+        <tree>
           <field name="project_member_id"/>
           <field name="team_id"/>
           <field name="project_member_role"/>
@@ -98,7 +98,7 @@
     <record id="project_member" model="ir.actions.act_window">
       <field name="name">Project Member</field>
       <field name="res_model">project.member</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree</field>
     </record>
 
     <!-- <menuitem name="Report" id="daily_report.menu_activity_list" parent="daily_report.menu_root" action="daily_report_activity"/> -->

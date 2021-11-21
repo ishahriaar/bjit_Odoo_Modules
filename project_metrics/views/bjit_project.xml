@@ -6,7 +6,7 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
-            <xpath expr="//notebook/page[1]" position="before">
+            <xpath expr="//notebook/page[4]" position="after">
                 <page string="Project Metrices">
                     
                     

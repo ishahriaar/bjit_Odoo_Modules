@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
 from dateutil.relativedelta import relativedelta
@@ -82,6 +83,7 @@ class ProjectMember(models.Model):
         # set auto-changing field
         self.project_member_role = self.project_member_id.employee_role
         
+
 
 class ProjectTask(models.Model):
     _inherit = "project.project"

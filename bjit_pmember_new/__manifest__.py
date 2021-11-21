@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "bjit_project_member",
+    'name': "bjit_pmember_new",
 
     'summary': """
         Project Customization""",
@@ -9,7 +9,7 @@
         Customizing Project Module
     """,
 
-    'author': "Shahriar",
+    'author': "",
     'website': "",
 
     # Categories can be used to filter modules in modules listing
@@ -19,7 +19,7 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'project', 'hr', 'custom_employee'],
+    'depends': ['base', 'project', 'hr'],
 
     # always loaded
     'data': [
@@ -29,11 +29,8 @@
         'views/project_monthly_invoice_views.xml',
         # 'views/inherited_employee_views.xml',
     ],
-
-    "assets": {
-        "web.assets_backend": [
-            "bjit_project_member/static/src/css/my_class.css"
-        ]
-           }
-
+    # only loaded in demonstration mode
+    'demo': [
+        'demo/demo.xml',
+    ],
 }
