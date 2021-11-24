@@ -1,5 +1,5 @@
 
-# BJIT Project_OJT
+# BJIT ERP Project_Module
 ## Customize Project Modules
 
 [![N|Solid](https://img.shields.io/badge/Odoo-Made%20with%20%E2%9D%A4%EF%B8%8F%20by%20Shahriar%20Amin-brightgreen)](https://ishahriar94.github.io/)
