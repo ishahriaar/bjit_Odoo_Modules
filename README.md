@@ -1,4 +1,3 @@
-# bjit_odooModules
 
 # BJIT Project_OJT
 ## Customize Project Modules
