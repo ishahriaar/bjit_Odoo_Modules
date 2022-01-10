@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+<!--        <record id='stock_move_list' model='ir.ui.view'>-->
+<!--            <field name='name'>stock.move.form</field>-->
+<!--            <field name='model'>stock.mover</field>-->
+<!--            <field name='arch' type='xml'>-->
+<!--                <form>-->
+<!--&lt;!&ndash;                    <header>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <button name="action_url" string="Visit Warehouse" class="btn-primary"&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        type="object"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    </header>&ndash;&gt;-->
+<!--                    <sheet>-->
+<!--                        <group>-->
+
+<!--                        <field name="stock_pid"/>-->
+<!--                        <field name="prod_demand"/>-->
+<!--                        <field name="prod_done"/>-->
+
+<!--                        </group>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+
+      <record id='stock_move_list_view' model='ir.ui.view'>
+            <field name='name'>stock.move.list</field>
+            <field name='model'>stock.mover</field>
+            <field name='arch' type='xml'>
+                <tree editable="bottom">
+<!--                    <header>-->
+<!--                        <button name="action_url" string="Visit Warehouse" class="btn-primary"-->
+
+<!--                        type="object"/>-->
+
+<!--                    </header>-->
+
+
+                        <field name="stock_pid" />
+                        <field name="prod_demand" />
+                        <field name="prod_done"  />
+
+
+                </tree>
+            </field>
+        </record>
+
+
+
+  </data>
+</odoo>

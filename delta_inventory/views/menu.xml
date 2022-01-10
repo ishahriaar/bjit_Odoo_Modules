@@ -1,0 +1,96 @@
+<odoo>
+
+
+    <record model="ir.actions.act_window" id="project_action_window">
+      <field name="name">Product Catalog</field>
+      <field name="res_model">product.list</field>
+      <field name="view_mode">kanban,form,tree,calendar,graph</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="transfer_action_window">
+        <field name="name">Make Transfer</field>
+        <field name="res_model">transfer.list</field>
+        <field name="context">{'group_by' : 'op_type'}</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="stock_move_window">
+      <field name="name">Stock Moves</field>
+      <field name="res_model">stock.mover</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="house_move_window">
+      <field name="name">Warehouses</field>
+      <field name="res_model">warehouse.list</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!--    <record model="ir.actions.act_window" id="dash_move_window">-->
+<!--      <field name="name">Dashboard</field>-->
+<!--      <field name="res_model">dash.list</field>-->
+<!--      <field name="view_mode">tree</field>-->
+<!--    </record>-->
+
+
+
+
+
+
+
+    <!-- Parent -->
+
+    <menuitem name="Delta Inventory"
+              id="imenu_root"
+              web_icon="delta_inventory,static/description/icon.png"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Dashboard"
+     action="transfer_action_window"
+     id="apple_menu_1"
+     parent="imenu_root"/>
+
+    <menuitem name="Operations"
+     id="apple_menu_3"
+     parent="imenu_root"/>
+
+    <menuitem name="Products"
+     id="apple_menu_2"
+     parent="imenu_root"/>
+
+    <menuitem name="Warehouses"
+              action="house_move_window"
+              id="apple_menu_7"
+              parent="imenu_root"/>
+
+
+
+
+
+    <menuitem id="menu_hr_root"
+     name="Employees"
+     action="hr.open_view_employee_list_my"
+     parent="imenu_root"/>
+
+
+
+     <!--    SubMenus-->
+     <menuitem name="Products Catalog"
+     id="apple_menu_1_list"
+     parent="apple_menu_2"
+     action="project_action_window"/>
+
+    <menuitem name="Transfers"
+     id="apple_menu_3_list"
+     parent="apple_menu_3"
+     action="transfer_action_window"/>
+
+    <menuitem name="Stock Moves"
+     id="apple_menu_4_list"
+     parent="apple_menu_3"
+     action="stock_move_window"/>
+
+
+
+</odoo>

@@ -3,7 +3,7 @@
 
     <record model="ir.actions.act_window" id="project_action_window">
         <field name="name">project window</field>
-        <field name="res_model">lession.project</field>
+        <field name="res_model">lesson.project</field>
         <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="milestone_action_window">

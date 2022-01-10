@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+<!-- for product list view-->
+        <record id='lockheed_custom_list' model='ir.ui.view' >
+            <field name='name'>product.list.view</field>
+            <field name='model'>product.list</field>
+            <field name='arch' type='xml'>
+                <tree string="Product List">
+
+                    <field name='sequence' widget="handle"/>
+                    <field name='prod_name'/>
+                    <field name='description'/>
+<!--                    <field name='status' invisible="1"/>-->
+                    <field name='stage_update'/>
+                    <field name='sale_price' />
+                    <field name="prod_cost" />
+
+                     <field name='country' />
+
+                </tree>
+            </field>
+        </record>
+
+<!-- for product form view -->
+        <record id='product_view_form' model='ir.ui.view' >
+            <field name='name'>product.entry.form</field>
+            <field name='model'>product.list</field>
+            <field name='arch' type='xml'>
+                <form>
+<!--                            <header>-->
+<!--                                <field name="status" widget="statusbar"/>-->
+<!--                            </header>-->
+                    <sheet>
+
+                    <group col="2">
+                        <group>
+
+                            <div style="padding: 10px;">
+                            <field name='product_image' widget = "image"/>
+                            </div>
+
+                        </group>
+                    <group>
+                        <separator string="Product"/>
+                        <field name='prod_name' decoration-bf="1"/>
+                        <field name='cus_sold' />
+                        <field name='country'/>
+
+                        <field name='avail_from'/>
+                        <field name="warehouse"/>
+
+
+
+                    </group>
+
+
+                    </group>
+                    <group>
+                    <separator string="Details" colspand="2"/>
+                        <field name='description'/>
+
+
+                        <field name='sale_price'/>
+
+
+                        <field name="prod_cost"/>
+<!--                        <field name='status' invisible="1"/>-->
+                        <field name="stage_update"/>
+                        <field name="on_hand"/>
+
+                        <field name="stock_into" invisible="1"/>
+
+
+
+
+
+                    </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+
+   <!-- calendar view for products -->
+
+
+
+    <record id="product_view_calendar" model="ir.ui.view">
+        <field name="name">inventory.product.calendar</field>
+        <field name="model">product.list</field>
+        <field name="arch" type="xml">
+            <calendar string="Product Availability" date_start="avail_from">
+
+
+
+                <field name="prod_name"/>
+
+            </calendar>
+        </field>
+    </record>
+
+
+<!-- Kanban advanced view -->
+    <record id="view_product_kanban" model="ir.ui.view">
+        <field name="name">product.list.kanban</field>
+        <field name="model">product.list</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_update" archivable="false" >
+                <field name="prod_name"/>
+                <field name="description"/>
+                <field name="product_image"/>
+
+                <field name="sale_price"/>
+                <field name="stage_update"/>
+<!--                <progressbar field="stage_update" colors='{"available": "success", "unavailable": "danger"}'/>-->
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click oe_kanban_card o_real_estate_kanban" style="background-color: #f3e5f5; margin-top: 10px;">
+
+                            <div class="o_kanban_image">
+                                <field name="product_image" widget="image" class="oe_avatar"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <h2 class="o_kanban_record_title"><field name="prod_name"/></h2>
+                                <ul>
+
+
+                                    <li> Description : <field name="description"/></li>
+<!--                                    <li> Price : <field name="sale_price"/> </li>-->
+
+
+                                    <li> Status : <field name="stage_update"/></li>
+                                    <li> On Hand: <field name="on_hand"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+
+
+
+
+
+
+
+<!--    <record id="change_status" model="ir.actions.server">-->
+
+<!--            <field name="name">Toggle Status</field>-->
+<!--            <field name="model_id" ref="model_product_list"/>-->
+<!--            <field name="binding_model_id" ref="model_product_list"/>-->
+<!--            <field name="binding_view_types">list,form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">action = record.update_status()</field>-->
+
+<!--    </record>-->
+
+
+      <record id="product_view_graph" model="ir.ui.view">
+            <field name="name">inventory.product.graph</field>
+            <field name="model">product.list</field>
+            <field name="arch" type="xml">
+                <graph string="Product Availablity" type = "pie">
+
+
+                    <field name="on_hand" type = "measure"/>
+
+                </graph>
+            </field>
+      </record>
+
+
+    </data>
+</odoo>
+
+

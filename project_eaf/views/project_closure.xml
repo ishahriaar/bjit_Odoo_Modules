@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id='project_closure_inherit' model='ir.ui.view'>
+        <field name='name'>project.closure.inherit</field>
+        <field name='model'>project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[8]" position="after">
+                <page string="Project Closure">
+
+                    <notebook>
+                        <page string="Checklist">
+                            <field name="project_checklist_line">
+                                <tree string="Checklist" editable="bottom">
+                                    <field name="checklist_name"/>
+                                    <field name="yes_no"/>
+                                    <field name="comments"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Survey">
+                            <field name="project_survey_line">
+                                <tree string="Survey" editable="bottom">
+                                    <field name="survey_name"/>
+                                    <field name="answer"/>
+                                    <field name="comments"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Future Benefits Realization">
+                            <field name="project_future_benefits_line">
+                                <tree editable="bottom">
+                                    <field name="benefit"/>
+                                    <field name="measured"/>
+                                    <field name="ownership"/>
+                                    <field name="realized"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>

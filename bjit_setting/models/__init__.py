@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from . import models
 from . import bjitset
+from . import settings_inherit
+

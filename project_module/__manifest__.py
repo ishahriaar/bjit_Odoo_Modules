@@ -22,7 +22,7 @@
 
 
         'views/functions.xml',
-        'views/fun_add.xml',
+        'views/function_adder.xml',
         'views/inherit_view_project.xml',
 
         'views/project_module.xml',

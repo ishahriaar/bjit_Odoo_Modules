@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+<!-- for product form view -->
+        <record id='transfer_view_form' model='ir.ui.view' >
+            <field name='name'>transfer.list.form</field>
+            <field name='model'>transfer.list</field>
+            <field name='arch' type='xml'>
+                <form>
+                    <header>
+                        <button name="mark_as_to" attrs="{'invisible': [('state', 'in', ['cancel', 'done', 'ready'])]}" string="MARK AS TODO" class="btn btn-warning"
+
+                        type="object"/>
+
+                        <button name="mark_as_done" attrs="{'invisible': ['|', ('state', '=', 'cancel'), ('state', '=', 'done')]}" string="Validate" class="btn btn-success"
+
+                        type="object"/>
+
+                        <button name="mark_as_cancel" attrs="{'invisible': [('state', '=', 'cancel')]}" string="Cancel" class="btn btn-danger"
+
+                        type="object"/>
+
+                    </header>
+
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                         <div class="oe_title">
+                        <h1>
+                            <field name="ref_number"/>
+                        </h1>
+                    </div>
+                        <group>
+                        <group style="width:30%;">
+                                <div class="o_row" >
+                                    <div>
+                                <label for="customer_name" string="Delivery Address" lass="font-weight-bold" attrs="{'invisible':[('op_type', '!=', 'dv001')]}"/>
+                                <label for="customer_name" string="Received From" attrs="{'invisible':['|', ('op_type', '=', 'dv001'), ('op_type', '!=', 'back01') ]}"/>
+                                <label for="customer_name" string="Manager" attrs="{'invisible':['|', ('op_type', '=', 'dv001'), ('op_type', '!=', 'pur001') ]}"/>
+
+                                <label for="customer_name" string="Contact" attrs="{'invisible': [('op_type', 'in', ['pur001','dv001','back01'])]}"/>
+                                    </div>
+                                </div>
+
+                                <field name="customer_name" nolabel='1'/>
+
+
+                               <field name='op_type' />
+
+<!--                            <field name='cus_name' decoration-bf="1" attrs="{'invisible': [('op_type', 'in', ['pur001','dv001'])]}"/>-->
+<!--                            <field name='delivery_add' decoration-bf="1" attrs="{'invisible': ['|', ('op_type', '!=', 'dv001'), ('op_type', '=', 'back01')]}"/>-->
+<!--                            <field name='recv_from' decoration-bf="1" attrs="{'invisible': ['|', ('op_type', '!=', 'pur001'),('op_type', '=', 'dv001')]}"/>-->
+
+
+
+
+                        </group>
+                        <group>
+
+
+                            <field name="avail"/>
+                            <field name="source_doc" placeholder="e.g DIP1020" style="color: #45494b"/>
+
+                            <field name="prod_check" attrs="{'invisible': ['|', ('field_ck', '!=', True), ('op_type', 'in', ['pur001','back01'])]}"/>
+
+                            <div>
+                            <field name="field_ck" invisible="1" />
+                            </div>
+                            <field name="priority" widget="priority"/>
+
+                        </group>
+                        </group>
+                    </sheet>
+                    <div style="padding:20px;">
+                    <notebook>
+                        <page string="Operations" name="stock_ops">
+
+                                <div style="padding:10px;">
+                                <field name="product_in"/>
+                                </div>
+
+                        </page>
+
+                        <page string="Additional Info" name="extra">
+                            <div style="padding:10px;">
+                            <group>
+                                <group string="Other Information" name="other_infos">
+
+
+                                    <field name="ship_policy" attrs="{'invisible': [('op_type', '!=', 'dv001')]}"/>
+                                    <field name="respon_guy" />
+
+
+
+                                </group>
+                            </group>
+                            </div>
+                        </page>
+                    </notebook>
+
+                     </div>
+                     <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+      <record id='my_transfer_tree_view' model='ir.ui.view'>
+            <field name='name'>product.transfer.list.view</field>
+            <field name='model'>transfer.list</field>
+            <field name='arch' type='xml'>
+                <tree decoration-danger="state == 'cancel'" decoration-success="state == 'done'"
+                decoration-primary="state == 'draft'" decoration-warning="state == 'ready'">
+
+
+                        <field name="ref_number"/>
+                        <field name="customer_name"/>
+                        <field name="avail"/>
+                        <field name="source_doc"/>
+
+                        <field name="priority" widget="priority"/>
+                        <field name="state" />
+
+
+
+
+
+                </tree>
+            </field>
+        </record>
+
+        <record id='view_stu_search' model='ir.ui.view'>
+            <field name='name'>properties.data.search</field>
+            <field name='model'>transfer.list</field>
+            <field name='arch' type='xml'>
+                <search>
+                    <field name="ref_number"/>
+
+
+
+                    <filter name="filter_state1"
+                        string="Done"
+                        domain="[('state', 'ilike', 'done')]" />
+
+                    <filter name="filter_state2"
+                        string="Ready"
+                        domain="[('state', 'ilike', 'ready')]" />
+
+                    <filter name="filter_state"
+                        string="Draft"
+                        domain="[('state', 'ilike', 'draft')]" />
+
+                    <filter name="filter_state"
+                        string="Cancel"
+                        domain="[('state', 'ilike', 'cancel')]" />
+
+                    <group string="Group by Operation Type">
+                    <filter name="op_type"
+                    context="{'group_by' : 'op_type'}"/>
+                    </group>
+
+
+                    <group string="Group by Responsible">
+                    <filter name="respon_guy"
+                    context="{'group_by' : 'respon_guy'}"/>
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+
+
+
+
+  </data>
+</odoo>

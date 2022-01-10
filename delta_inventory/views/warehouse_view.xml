@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data>
+
+<!-- for warehouse list view-->
+        <record id='lockheed_warehouse_custom_list' model='ir.ui.view' >
+            <field name='name'>warehouse.list.view</field>
+            <field name='model'>warehouse.list</field>
+            <field name='arch' type='xml'>
+                <tree>
+                    <field name='wname'/>
+                    <field name='wtype'/>
+                    <field name="wlocation"/>
+                    <field name="wmanage" />
+
+                </tree>
+            </field>
+        </record>
+
+<!-- for product form view -->
+        <record id='warehouse_view_form' model='ir.ui.view' >
+            <field name='name'>warehouse.entry.form</field>
+            <field name='model'>warehouse.list</field>
+            <field name='arch' type='xml'>
+                <form>
+                  <sheet>
+                     <group col="2">
+                         <group>
+                             <field name='wname'/>
+                             <field name='wtype'/>
+                             <field name="wmanage" />
+
+                            </group>
+                            <group>
+                                  <field name="wlocation"/>
+                                  <field name="wphone"/>
+                                  <field name="email"/>
+                            </group>
+                        </group>
+                     <notebook>
+
+                          <page string="Stored Products" name="warehouse_ops">
+
+                                <div style="padding:10px;">
+                                <field name="related_product" nolabel="1"/>
+                                </div>
+                           </page>
+
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+     <!-- graph view for products from warehouse  -->
+
+<!--    <record id="product_view_graph" model="ir.ui.view">   -->
+<!--        <field name="name">inventory.product.graph</field>   -->
+<!--        <field name="model">product.list</field>   -->
+<!--        <field name="arch" type="xml">       -->
+<!--            <graph string="Product Availablity" type = "pie">               -->
+<!--                        -->
+<!--                -->
+<!--                <field name="status" type = "measure"/>           -->
+<!--            -->
+<!--            </graph>   -->
+<!--        </field>-->
+<!--    </record>-->
+
+
+
+
+
+
+
+
+
+    </data>
+</odoo>

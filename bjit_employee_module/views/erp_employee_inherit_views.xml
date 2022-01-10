@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='bjit_project_history_inherit' model='ir.ui.view'>
+        <field name='name'>bjit.project.history</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[3]" position="after">
+                <page string="BJIT Project History">
+                    <field name="bjit_project_history_line">
+                        <tree editable="bottom">
+                            <field name="project_id"/>
+                            <field name="project_role_id" context="{'tree_view_ref':'erp_employee.bjit_role_tree'}"/>
+                            <field name="responsibility"/>
+                            <field name="invoice"/>
+                            <field name="bjit_process"/>
+                            <field name="assigned_from"/>
+                            <field name="assigned_to"/>
+                            <field name="notes"/>
+                            <field name="no_of_member"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="project_id"/>
+                                <field name="project_role_id"/>
+                                <field name="responsibility"/>
+                                <field name="invoice"/>
+                                <field name="bjit_process"/>
+                                <field name="assigned_from"/>
+                                <field name="assigned_to"/>
+                                <field name="notes"/>
+                                <field name="no_of_member"/>
+
+                                <field name="project_role_id">
+                                    <tree string="Role" editable="bottom">
+                                        <field name="project_role"/>
+                                        <field name="role_respon"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="project_role"/>
+                                            <field name="role_respon"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='other_project_history_inherit' model='ir.ui.view'>
+        <field name='name'>other.project.history</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[4]" position="after">
+                <page string="Other Project History">
+                    <field name="other_project_history_line">
+                        <tree editable="bottom">
+                            <field name="project_id"/>
+                            <field name="project_role_id" options = '{"limit": 4, "no_quick_create": True, "no_create_edit": False}'/>
+                            <field name="responsibility"/>
+                            <field name="technology_id"/>
+                            <field name="bjit_process"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="date_duration"/>
+                            <field name="no_of_member"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="project_id"/>
+                                <field name="project_role_id"/>
+                                <field name="responsibility"/>
+                                <field name="technology_id"/>
+                                <field name="bjit_process"/>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                                <field name="date_duration"/>
+                                <field name="no_of_member"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='academic_qualification_inherit' model='ir.ui.view'>
+        <field name='name'>academic.qualification.inherit</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[5]" position="after">
+                <page string="Academic Qualification">
+                    <field name="academic_qualification_line">
+                        <tree editable="bottom">
+                            <field name="aca_degree_id"/>
+                            <field name="aca_institute_id"/>
+                            <field name="aca_major_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="duration"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="aca_degree_id"/>
+                                <field name="aca_institute_id"/>
+                                <field name="aca_major_id"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="duration"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='work_experience_inherit' model='ir.ui.view'>
+        <field name='name'>work.experience.inherit</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[6]" position="after">
+                <page string="Work Experience">
+                    <field name="work_experience_line">
+                        <tree editable="bottom">
+                            <field name="bjit_role_id"/>
+                            <field name="responsibility"/>
+                            <field name="organization_id"/>
+                            <field name="technology_id"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="date_duration"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="bjit_role_id"/>
+                                <field name="responsibility"/>
+                                <field name="organization_id"/>
+                                <field name="technology_id"/>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                                <field name="date_duration"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='erp_certification_inherit' model='ir.ui.view'>
+        <field name='name'>erp.certification.inherit</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[7]" position="after">
+                <page string="Certification">
+                    <field name="certification_line">
+                        <tree editable="bottom">
+                            <field name="cert_name_id"/>
+                            <field name="issued_by_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="cert_status"/>
+                            <field name="cert_image" widget="image" placeholder="UPLOAD" options="{'preview_image': 'image_small', 'size': [30, 30]}"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="cert_name_id"/>
+                                <field name="issued_by_id"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="cert_status"/>
+                                <field name="cert_image" widget="image"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='erp_training_inherit' model='ir.ui.view'>
+        <field name='name'>erp.training.inherit</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[8]" position="after">
+                <page string="Training">
+                    <field name="training_line">
+                        <tree editable="bottom">
+                            <field name="training_org_id"/>
+                            <field name="course_name_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="progress"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="training_org_id"/>
+                                <field name="course_name_id"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="progress"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='tech_skill_inherit' model='ir.ui.view'>
+        <field name='name'>tech.skill.inherit</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[9]" position="after">
+                <page string="Technical Skill">
+                    <field name="tech_skill_line">
+                        <tree nolabel="1" widget="many2many">
+                            <field name="tech_categ_id"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <!--                                <field name="tech_test"/>-->
+                                <field name="tech_categ_id"/>
+                                <field name="tech_history_line">
+                                    <tree string="Technical History" editable="bottom" nolabel="1" widget="many2many"
+                                          style="white-space: wrap;">
+                                        <field name="technology_id"/>
+                                        <field name="emp_comment"/>
+                                        <field name="yr_exper"/>
+                                        <field name="skill_level"/>
+                                        <field name="reviewer_cmnt"/>
+                                        <field name="no_project"/>
+                                        <field name="target"/>
+                                        <field name="due_date"/>
+                                        <field name="achieve"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="technology_id"/>
+                                            <field name="emp_comment"/>
+                                            <field name="yr_exper"/>
+                                            <field name="skill_level"/>
+                                            <field name="reviewer_cmnt"/>
+                                            <field name="no_project"/>
+                                            <field name="target"/>
+                                            <field name="due_date"/>
+                                            <field name="achieve"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='erp_employee_inherit' model='ir.ui.view'>
+        <field name='name'>erp.employee.inherit</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[10]" position="after">
+                <page string="Language Skill">
+                    <field name="employee_language_line">
+                        <tree nolabel="1" widget="many2many">
+                            <field name="employee_language"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="employee_language"/>
+                                <field name="language_history_line">
+                                    <tree string="Language History" editable="bottom" nolabel="1" widget="many2many">
+                                        <field name="language_type"/>
+                                        <field name="grade_level"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="language_type"/>
+                                            <field name="grade_level"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='erp_employee_profile_inherit' model='ir.ui.view'>
+        <field name='name'>erp.employee.profile.inherit</field>
+        <field name='model'>hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//notebook/page[11]" position="after">
+                <page string="Profile">
+                    <form>
+                        <field name="erp_profile"/>
+                    </form>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

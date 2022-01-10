@@ -8,7 +8,7 @@ class ProjectData(models.Model):
     _description = 'modules details'
     _rec_name = 'module_name'
 
-    module_name = fields.Many2one('module.name', string='Module')
+    module_name = fields.Many2one('module.name', string='Module', required=True)
     estimate_effort = fields.Float(string='Estimated Effort', default=0.00)
     actual_effort = fields.Float(string='Actual Effort', default=0.00)
 

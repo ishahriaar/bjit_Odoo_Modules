@@ -2,13 +2,9 @@
 {
     'name': "bjit_setting",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': "",
 
-    'description': """
-        Long description of module's purpose
-    """,
+    'description': "",
 
     'author': "",
     'website': "",
@@ -16,7 +12,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'module',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -27,9 +23,8 @@
         # 'security/ir.model.access.csv',
 
         'views/bjitset_views.xml',
+        'views/id_sequence.xml',
+        'views/settings_inherit.xml'
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+
 }

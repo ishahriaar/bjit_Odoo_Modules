@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+<template id="report_applicants_ware">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Warehouse Details</h2>
+                        <div class="oe_structure"/>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-condensed" style="border: 3px solid black !important;">
+                                    <tr>
+                                        <td width="60%">
+                                            <table>
+                                                <tr class="table-info" >
+                                                    <td class="table-info">
+                                                        <span>
+                                                            <h1><strong>Warehouse: </strong></h1>
+                                                        </span>
+                                                    </td>
+                                                    <td colspan="3" class="text-center">
+                                                        <h1><span t-field="o.wname"/></h1>
+                                                    </td>
+                                                </tr>
+                                                <!-- <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Author Name:</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.author_name"/>
+                                                    </td>
+                                                </tr> -->
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Location:</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.wlocation"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Email:</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.email"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Manager: </strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.wmanage"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+
+
+                    </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

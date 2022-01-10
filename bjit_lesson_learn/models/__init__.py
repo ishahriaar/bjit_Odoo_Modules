@@ -1,4 +1,4 @@
 
-from . import models
+from . import project_lesson
 from . import project
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id='bjit_role_tree' model='ir.ui.view'>
+        <field name='name'>bjit.role.tree</field>
+        <field name='model'>bjit.role</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name="project_role"/>
+                <field name="role_respon"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

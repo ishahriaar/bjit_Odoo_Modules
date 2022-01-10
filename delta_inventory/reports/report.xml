@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+         <report
+            id="menu_report_applicants"
+            string="Transfer Report"
+            model="transfer.list"
+            report_type="qweb-pdf"
+            name="i_inventory.report_applicants"
+            file="transfer_report"
+        />
+
+<!--        <report-->
+<!--            id="menu_report_applicants2"-->
+<!--            string="Warehouse Report"-->
+<!--            model="warehouse.list"-->
+<!--            report_type="qweb-pdf"-->
+<!--            name="i_inventory.report_applicants_ware"-->
+<!--            file="warehouse_report"-->
+<!--        />-->
+
+
+
+
+
+
+</odoo>

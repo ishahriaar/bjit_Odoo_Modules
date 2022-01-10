@@ -20,7 +20,8 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/project_eaf.xml',
-        'views/inherit_view_project.xml'
+        'views/inherit_view_project.xml',
+        'views/project_closure.xml',
     ]
 
 }

@@ -5,7 +5,20 @@ class BjitSetting(models.Model):
     _inherit = 'project.project'
     _description = 'Inherited Project Details'
 
-    pro_id = fields.Char(string='Project ID')
+    project_id = fields.Char(string='Project ID', required=True, readonly=True, index=True, copy=False, default='new')
+
+    @api.model
+    def create(self, vals):
+        if vals.get('project_id', 'new') == 'new':
+            vals['project_id'] = self.env['ir.sequence'].next_by_code('project.id.serial') or 'new'
+        pre_new = self.env['res.config.settings'].search([])[-1].project_id_prefix
+        suff_new = self.env['res.config.settings'].search([])[-1].project_id_suffix
+        print(pre_new)
+        vals['project_id'] = str(pre_new) + str(vals['project_id']) + str(suff_new)
+
+        result = super(BjitSetting, self).create(vals)
+
+        return result
     pro_status = fields.Selection([('option1', 'In Progress'),
                                    ('option2', 'Completed'), ('option3', 'Suspended'),
                                    ('option4', 'Other')], string='Project status')

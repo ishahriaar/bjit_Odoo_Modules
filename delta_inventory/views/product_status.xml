@@ -1,0 +1,80 @@
+
+<odoo>
+
+
+    <record model="ir.ui.view" id="bjit_recruitment_stage_form">
+            <field name="name">bjit_recruitment.stage.form</field>
+            <field name="model">product.status</field>
+            <field name="arch" type="xml">
+                <form string="Stage">
+                <sheet>
+                    <group name="stage_definition" string="Stage Definition">
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence" groups="base.group_no_one"/>
+<!--                            <field name="color_pick"/>-->
+
+                        </group>
+
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    <!-- Stage Tree View -->
+    <record model="ir.ui.view" id="bjit_recruitment_stage_tree">
+        <field name="name">bjit_recruitment.stage.tree</field>
+        <field name="model">product.status</field>
+        <field name="arch" type="xml">
+            <tree string="Stages">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <!-- Stage Kanban View -->
+    <record id="view_bjit_recruitment_stage_kanban" model="ir.ui.view">
+        <field name="name">bjit_recruitment.stage.kanban</field>
+        <field name="model">product.status</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong><field name="name"/></strong>
+                            </div>
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+
+    <!-- Stage Action -->
+    <record id="bjit_recruitment_stage_act" model="ir.actions.act_window">
+        <field name="name">Stages</field>
+        <field name="res_model">product.status</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_id" ref="bjit_recruitment_stage_tree"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Add a new stage in the recruitment process
+          </p><p>
+            Don't forget to specify the department if your recruitment process
+            is different according to the job position.
+          </p>
+        </field>
+    </record>
+
+<!--    <menuitem name="stages" parent="apple_menu_2" id="menu_bjit_recruitment_stage" action="bjit_recruitment_stage_act" sequence="1"/>-->
+</odoo>

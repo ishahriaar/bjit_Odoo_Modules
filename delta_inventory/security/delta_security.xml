@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.module.category" id="module_category_hotel">
+        <field name="name">Delta Inventory</field>
+        <field name="description">Access For Delta Inventory</field>
+        <field name="sequence">45</field>
+    </record>
+
+    <record id="group_hotel_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_hotel"/>
+    </record>
+
+    <record id="group_hotel_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_hotel"/>
+<!--        <field name="implied_ids" eval="[(4, ref('group_hotel_user'))]"/>-->
+    </record>
+
+    <record id="group_hotel_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category_hotel"/>
+        <field name="implied_ids" eval="[(4, ref('group_hotel_manager'))]"/>
+    </record>
+
+</odoo>

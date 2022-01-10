@@ -2,7 +2,7 @@ from odoo import models, fields
 
 
 class LessonLearned(models.Model):
-    _name = 'lession.project'
+    _name = 'lesson.project'
     _description = 'project_project'
 
     # task=fields.Char(string="Name of Task")

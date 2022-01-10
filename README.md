@@ -4,6 +4,8 @@
 
 [![N|Solid](https://img.shields.io/badge/Odoo-Made%20with%20%E2%9D%A4%EF%B8%8F%20by%20Shahriar%20Amin-brightgreen)](https://ishahriar94.github.io/)
 [![N|Solid](https://img.shields.io/badge/Version-Odoo%2015-informational)](https://github.com/odoo/odoo)
+[![N|Solid](https://img.shields.io/badge/Odoo%2015-Community-red)](https://github.com/odoo/odoo)
+
 
 
 

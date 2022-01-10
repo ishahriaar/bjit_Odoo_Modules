@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="menu_view_product" model="website.menu">
+
+            <field name="name">View Product</field>
+            <field name="url">/product_view</field>
+            <field name="parent_id" ref="website.main_menu"/>
+
+    </record>
+
+    <template id="product_page" name="Product List">
+        <t t-call="website.layout">
+            <div class="container">
+                <h3 style="text-align: center;">Product Details</h3>
+                <table class="table table-hover table-dark">
+                    <thead>
+                        <tr style="text-align: center; background-color: #233a46; color: white;">
+                            <th>
+                                Product Name
+                            </th>
+                            <th>
+                                Description
+                            </th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="product" t-as="pro">
+                            <tr style="text-align: center;">
+                                <td>
+                                      <t t-esc="pro.prod_name"/>
+                                </td>
+                                <td>
+                                      <t t-esc="pro.description"/>
+                                </td>
+<!--                                <td>-->
+<!--                                      <t t-set="values" t-value="dict([('available','Available'),('unavailable','Unavailable'), (option3,Water)])"/> -->
+<!--                                      -->
+<!--                                      <t t-esc="values[pro.status]"/>-->
+<!--                                </td>-->
+
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+      </template>
+
+</odoo>

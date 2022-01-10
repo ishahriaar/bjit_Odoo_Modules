@@ -84,7 +84,6 @@ class ProjectMember(models.Model):
         self.project_member_role = self.project_member_id.employee_role
         
 
-
 class ProjectTask(models.Model):
     _inherit = "project.project"
 
