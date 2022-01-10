@@ -44,10 +44,10 @@ _openRecord: function () {
 
 ## Modules Installation
 
-First install the module called `bjit_Employee Module` - 
+First install the module called `my_custom_employee` - 
 
 ### Directory -- 
 
-```my_addons/custom_employee```
+```my_addons/my_custom_employee```
 
 Then install rest of the modules accordingly.
