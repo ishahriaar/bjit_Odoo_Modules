@@ -1,0 +1,70 @@
+<odoo>
+  <data>
+
+    <record id="project_member_tree" model="ir.ui.view">
+      <field name="name">hr.employee.type.tree</field>
+      <field name="model">hr.employee.type</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="responsibility"/>
+          
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="hr_employee_type_form" model="ir.ui.view">
+      <field name="name">hr.employee.type.form</field>
+      <field name="model">hr.employee.type</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+
+                    <group>
+                      <field name='name'/>
+                      
+                    </group>
+
+                  </div>
+
+                  <div class="col-md-6">
+
+                    <group>
+
+                      <field name="responsibility"/>
+
+                    </group>
+
+                  </div>
+
+                  
+
+                </div>
+              </div>
+
+
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record id="hr_employee_type" model="ir.actions.act_window">
+      <field name="name">Employee Type</field>
+      <field name="res_model">hr.employee.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <menuitem name="Report" id="daily_report.menu_activity_list" parent="daily_report.menu_root" action="daily_report_activity"/> -->
+
+  </data>
+</odoo>
